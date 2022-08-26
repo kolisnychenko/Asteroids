@@ -6,11 +6,11 @@ namespace Asteroids
 {
     public static class EventManager
     {
-        private static readonly Dictionary<string, UnityEvent<object>> Events = new Dictionary<string, UnityEvent<object>>();
+        private static readonly Dictionary<string, UnityEvent<object>> _events = new Dictionary<string, UnityEvent<object>>();
 
         public static void StartListening(string eventName, UnityAction<object> callback)
         {
-            if (Events.TryGetValue(eventName, out var thisEvent))
+            if (_events.TryGetValue(eventName, out var thisEvent))
             {
                 thisEvent.AddListener(callback);
             }
@@ -18,13 +18,13 @@ namespace Asteroids
             {
                 thisEvent = new UnityEvent<object>();
                 thisEvent.AddListener(callback);
-                Events.Add(eventName, thisEvent);
+                _events.Add(eventName, thisEvent);
             }
         }
         
         public static void StopListening(string eventName, UnityAction<object> callback)
         {
-            if (Events.TryGetValue(eventName, out var thisEvent))
+            if (_events.TryGetValue(eventName, out var thisEvent))
             {
                 thisEvent.RemoveListener(callback);
             }
@@ -32,7 +32,7 @@ namespace Asteroids
         
         public static void StopListeningAll(string eventName)
         {
-            if (Events.TryGetValue(eventName, out var thisEvent))
+            if (_events.TryGetValue(eventName, out var thisEvent))
             {
                 thisEvent.RemoveAllListeners();
             }
@@ -40,7 +40,7 @@ namespace Asteroids
 
         public static void EmitEvent(string eventName, object data)
         {
-            if (Events.TryGetValue(eventName, out var thisEvent))
+            if (_events.TryGetValue(eventName, out var thisEvent))
             {
                 thisEvent.Invoke(data);
             }

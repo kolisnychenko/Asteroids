@@ -7,6 +7,9 @@ namespace Asteroids
 {
     public class ShipController : MonoBehaviour, ITagwiseCollisionReceiver
     {
+
+        #region data
+
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private GameObject shield;
         [SerializeField] private Rigidbody2D rb2D;
@@ -14,7 +17,11 @@ namespace Asteroids
 
         private bool _isInvincible;
         private bool _isRespawning;
-        
+
+        #endregion
+
+        #region interface
+
         public bool IsInvincible
         {
             get => _isInvincible;
@@ -29,6 +36,10 @@ namespace Asteroids
         {
             StartCoroutine(RespawnCor());
         }
+
+        #endregion
+
+        #region implementation
 
         private void Update()
         {
@@ -119,5 +130,8 @@ namespace Asteroids
             float zAxisRotation = transform.eulerAngles.z * Mathf.Deg2Rad + Mathf.PI/2;
             return new Vector2(Mathf.Cos(zAxisRotation), Mathf.Sin(zAxisRotation));
         }
+
+        #endregion
+        
     }
 }

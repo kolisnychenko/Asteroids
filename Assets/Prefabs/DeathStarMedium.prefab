@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 3372539758518498278}
+  _renderer: {fileID: 3372539758518498278}
 --- !u!114 &5054103513123604882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenWrapper: {fileID: 9215077001026094662}
   rb2D: {fileID: 7258056133629243267}
-  childDeathStars: []
+  _childDeathStars: []
 --- !u!114 &7419729463313664105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,9 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore:
-  - Asteroid
+  IgnoreSelf: 1
+  TagsToIgnore: []
 --- !u!58 &7508618247507000918
 CircleCollider2D:
   m_ObjectHideFlags: 0

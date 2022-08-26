@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd68fb24bff74093b761e2e4aabbb713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitBeforeEnableSec: 0
-  obstacle: {fileID: 4629926052133298804}
+  _waitBeforeEnableSec: 0
+  _obstacle: {fileID: 4629926052133298804}
 --- !u!1001 &5027815124178954581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55,10 +55,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 398196937473297187, guid: 80fada4e855b7af4cbb0694d7d8956ab, type: 3}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 398196937473297187, guid: 80fada4e855b7af4cbb0694d7d8956ab, type: 3}
-      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 398196937473297187, guid: 80fada4e855b7af4cbb0694d7d8956ab, type: 3}

@@ -6,9 +6,16 @@ namespace Asteroids
 {
     public abstract class Obstacle : MonoBehaviour, ITagwiseCollisionReceiver
     {
+        
+        #region data
+        
         [SerializeField] protected ScreenWrapper screenWrapper;
         [SerializeField] protected Rigidbody2D rb2D;
 
+        #endregion
+        
+        #region interface
+        
         public abstract int ObstacleRewardPoints { get; }
         
         public abstract void OnTagwiseCollisionEnter(Collision2D col);
@@ -44,5 +51,7 @@ namespace Asteroids
             return new Vector2(
                 Mathf.Cos(angle), Mathf.Sin(angle));  
         }
+        
+        #endregion
     }
 }

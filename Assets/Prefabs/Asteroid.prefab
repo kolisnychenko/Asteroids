@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 398196937473297186}
+  _renderer: {fileID: 398196937473297186}
 --- !u!114 &1965285740907950190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore: []
+  IgnoreSelf: 1
+  TagsToIgnore:
+  - DeathStar
 --- !u!58 &398196937473297191
 CircleCollider2D:
   m_ObjectHideFlags: 0

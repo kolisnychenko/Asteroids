@@ -5,9 +5,16 @@ namespace Asteroids
 {
     public static class ScreenUtils
     {
+        
+        #region data
+        
         private static int _screenWidth;
         private static int _screenHeight;
         private static Bounds _screenBounds;
+        
+        #endregion
+        
+        #region interface
         
         public static Bounds ScreenBounds
         {
@@ -39,7 +46,11 @@ namespace Asteroids
             var randomDotOnOpposedDiagonal = Vector2.Lerp(boundVertices[1], boundVertices[2], Random.value);
             return (randomDotOnOpposedDiagonal - startPoint).normalized;
         }
+        
+        #endregion
 
+        #region implementation
+        
         private static void Initialize()
         {
             _screenHeight = Screen.height;
@@ -75,5 +86,7 @@ namespace Asteroids
             Debug.DrawLine(p1, p5, Color.red, delay);
             Debug.DrawLine(p2, p6, Color.red, delay);
         }
+        
+        #endregion
     }
 }

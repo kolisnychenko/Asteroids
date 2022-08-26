@@ -1,17 +1,29 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroids
 {
     public class ScreenWrapper : MonoBehaviour
     {
-        [SerializeField] private new Renderer renderer;
+
+        #region data
+
+        [SerializeField] private Renderer _renderer;
 
         private bool _shouldWrap;
 
+        #endregion
+        
+        #region interface
+
         public bool IsInsideMap =>
             ScreenUtils.ScreenBounds.Contains(transform.position) ||
-            ScreenUtils.ScreenBounds.Intersects(renderer.bounds);
+            ScreenUtils.ScreenBounds.Intersects(_renderer.bounds);
+
+        #endregion
+
+        #region implementation
 
         private void Start()
         {
@@ -55,7 +67,10 @@ namespace Asteroids
             if(!Application.isPlaying) return;
             
             ScreenUtils.DrawBounds(ScreenUtils.ScreenBounds);
-            ScreenUtils.DrawBounds(renderer.bounds);
+            ScreenUtils.DrawBounds(_renderer.bounds);
         }
+
+        #endregion
+        
     }
 }

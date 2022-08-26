@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroids
 {
     public class DeathStar : Obstacle
     {
-        [SerializeField] private DeathStar[] childDeathStars;
+        [SerializeField] private DeathStar[] _childDeathStars;
 
         private Transform _playerTransform;
         
@@ -44,7 +45,7 @@ namespace Asteroids
 
         private void ReleaseChildren()
         {
-            foreach (var deathStar in childDeathStars)
+            foreach (var deathStar in _childDeathStars)
             {
                 deathStar.transform.parent = transform.parent;
                 deathStar.rb2D.simulated = true;

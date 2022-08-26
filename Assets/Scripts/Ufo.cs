@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Asteroids
 {
     public class Ufo : Obstacle
     {
-        [SerializeField] private Rigidbody2D bulletPrefabRb2D;
+        [SerializeField] private Rigidbody2D _bulletPrefabRb2D;
         
         public override int ObstacleRewardPoints => GameSettings.Settings.UfoRewardPoints;
 
@@ -28,7 +29,7 @@ namespace Asteroids
             {   
                 yield return new WaitForSeconds(GameSettings.Settings.UfoReloadTime);
             
-                var bulletRb2D = Instantiate(bulletPrefabRb2D, transform.position, Quaternion.identity);
+                var bulletRb2D = Instantiate(_bulletPrefabRb2D, transform.position, Quaternion.identity);
 
                 float randomAngle = Random.Range(0, 2 * Mathf.PI);
                 bulletRb2D.transform.eulerAngles = new Vector3(0, 0, randomAngle * Mathf.Rad2Deg);

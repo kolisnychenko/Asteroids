@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 5993672220836849094}
+  _renderer: {fileID: 5993672220836849094}
 --- !u!114 &5932098583788753836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore: []
+  IgnoreSelf: 1
+  TagsToIgnore: []
 --- !u!50 &232806321241050222
 Rigidbody2D:
   serializedVersion: 4

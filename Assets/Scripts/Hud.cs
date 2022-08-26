@@ -1,20 +1,28 @@
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Asteroids
 {
     public class Hud : MonoBehaviour
     {
-        [SerializeField] private Text score;
-        [SerializeField] private Text highScore;
-        [SerializeField] private Image[] lifeIcons;
-        [SerializeField] private RectTransform shieldScale;
-        [SerializeField] private CanvasGroup gameOverGroup;
-        [SerializeField] private GameObject tutorial;
+        
+        #region data
+        
+        [SerializeField] private Text _score;
+        [SerializeField] private Text _highScore;
+        [SerializeField] private Image[] _lifeIcons;
+        [SerializeField] private RectTransform _shieldScale;
+        [SerializeField] private CanvasGroup _gameOverGroup;
+        [SerializeField] private GameObject _tutorial;
 
         private float _fullShieldDuration;
+        
+        #endregion
+        
+        #region implementation
         
         private void Awake()
         {
@@ -27,7 +35,7 @@ namespace Asteroids
         private void Start()
         {
             RefreshLives();
-            highScore.text = GameManager.Instance.HighScore.ToString();
+            _highScore.text = GameManager.Instance.HighScore.ToString();
             _fullShieldDuration = GameSettings.Settings.ShipFullShieldDuration;
 
             StartCoroutine(ShowTutorialCoroutine());
@@ -40,7 +48,7 @@ namespace Asteroids
 
         private void OnScoreChanged(object _)
         {
-            score.text = GameManager.Instance.Score.ToString();
+            _score.text = GameManager.Instance.Score.ToString();
         }
 
         private void OnShipDestroyed(object _)
@@ -55,10 +63,10 @@ namespace Asteroids
 
         private IEnumerator ShowGameOver()
         {
-            while (gameOverGroup.alpha < 1 && gameOverGroup.transform.localScale.x < 1)
+            while (_gameOverGroup.alpha < 1 && _gameOverGroup.transform.localScale.x < 1)
             {
-                gameOverGroup.alpha += Time.deltaTime;
-                gameOverGroup.transform.localScale += Time.deltaTime * Vector3.one;
+                _gameOverGroup.alpha += Time.deltaTime;
+                _gameOverGroup.transform.localScale += Time.deltaTime * Vector3.one;
                 yield return null;
             }
         }
@@ -66,15 +74,15 @@ namespace Asteroids
         private IEnumerator ShowTutorialCoroutine()
         {
             Time.timeScale = 0f;
-            tutorial.SetActive(true);
+            _tutorial.SetActive(true);
             yield return new WaitUntil(() => Input.anyKeyDown);
-            tutorial.SetActive(false);
+            _tutorial.SetActive(false);
             Time.timeScale = 1f;
         }
 
         private void RefreshShieldScale()
         {
-            var newScale = shieldScale.localScale;
+            var newScale = _shieldScale.localScale;
             
             float x = GameManager.Instance.Shield / _fullShieldDuration;
             if(x > 0.99999f)
@@ -82,7 +90,7 @@ namespace Asteroids
             else 
                 newScale = new Vector3(x, newScale.y, newScale.z);
             
-            shieldScale.localScale = newScale;
+            _shieldScale.localScale = newScale;
         }
 
         private async void RefreshLives()
@@ -90,10 +98,13 @@ namespace Asteroids
             await Task.Yield();
             
             int lives = GameManager.Instance.Lives;
-            for (int i = 0; i < lifeIcons.Length; i++)
+            for (int i = 0; i < _lifeIcons.Length; i++)
             {
-                lifeIcons[i].gameObject.SetActive(i < lives);
+                _lifeIcons[i].gameObject.SetActive(i < lives);
             }
         }
+        
+        #endregion
+        
     }
 }

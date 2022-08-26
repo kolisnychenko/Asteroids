@@ -6,11 +6,18 @@ namespace Asteroids
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private ShipController shipController;
+
+        #region data
+        
+        [SerializeField] private ShipController _shipController;
         
         private float _shield;
         
         private const string HighScoreKey = "HighScoreKey";
+        
+        #endregion
+
+        #region interface
         
         public static GameManager Instance { get; set; }
         public int Score { get; private set; } = 0;
@@ -22,6 +29,10 @@ namespace Asteroids
             get => _shield;
             set => _shield = Mathf.Clamp(value, 0, GameSettings.Settings.ShipFullShieldDuration);
         }
+        
+        #endregion
+        
+        #region implementation
 
         private void Awake()
         {
@@ -63,11 +74,11 @@ namespace Asteroids
         {
             Shield = GameSettings.Settings.ShipFullShieldDuration;
             
-            shipController.gameObject.SetActive(false);
+            _shipController.gameObject.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             
-            shipController.gameObject.SetActive(true);
-            shipController.Respawn();
+            _shipController.gameObject.SetActive(true);
+            _shipController.Respawn();
         }
 
         private IEnumerator GameOverSequence()
@@ -77,7 +88,7 @@ namespace Asteroids
                 PlayerPrefs.SetInt(HighScoreKey, Score);
             }
 
-            shipController.gameObject.SetActive(false);
+            _shipController.gameObject.SetActive(false);
             
             yield return new WaitForSeconds(2f);
             
@@ -86,5 +97,8 @@ namespace Asteroids
 
             SceneManager.LoadScene(0);
         }
+        
+        #endregion
+        
     }
 }

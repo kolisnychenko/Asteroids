@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 499469365807240934}
+  _renderer: {fileID: 499469365807240934}
 --- !u!114 &6054899775358733144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore:
+  IgnoreSelf: 1
+  TagsToIgnore:
   - Bullet
 --- !u!58 &499469365807240931
 CircleCollider2D:

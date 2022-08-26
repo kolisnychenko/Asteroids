@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &86497464 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 499469365807240929, guid: 538c49680854cd74f8a51ce18930b939, type: 3}
-  m_PrefabInstance: {fileID: 499469365766509714}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d90fba2a2e43914b846b31164c9d097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &140059333
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +135,7 @@ GameObject:
   - component: {fileID: 140059336}
   - component: {fileID: 140059335}
   m_Layer: 5
-  m_Name: Live (2)
+  m_Name: Life (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,15 +440,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebee5fc158ceca54f98779b7cbe3590c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 1761985912}
-  highScore: {fileID: 1920830592}
-  lifeIcons:
+  _score: {fileID: 1761985912}
+  _highScore: {fileID: 1920830592}
+  _lifeIcons:
   - {fileID: 1665201021}
   - {fileID: 1683259781}
   - {fileID: 140059335}
-  shieldScale: {fileID: 730078350}
-  gameOverGroup: {fileID: 2004749965}
-  tutorial: {fileID: 405499753}
+  _shieldScale: {fileID: 730078350}
+  _gameOverGroup: {fileID: 2004749965}
+  _tutorial: {fileID: 405499753}
 --- !u!1 &394540158
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c982dd0b0c314845b186f061a8fb36b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipController: {fileID: 86497464}
+  _shipController: {fileID: 604187662}
 --- !u!1 &405499753
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +687,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604187662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 499469365807240929, guid: 538c49680854cd74f8a51ce18930b939, type: 3}
+  m_PrefabInstance: {fileID: 499469365766509714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d90fba2a2e43914b846b31164c9d097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &661753002
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,9 +880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6867313e7724c589f5234f70cdb874b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsPrefabs:
+  _levelsPrefabs:
   - {fileID: 5564392447773643630, guid: e8b414ed0020a9f4b9b087a1b56d7d78, type: 3}
-  - {fileID: 8042183247987392412, guid: d0861c0655398b340a4dce053c1b13cd, type: 3}
+  - {fileID: 8088574938750996512, guid: 09cda2008d059ab4fa42c0ba27c66e4f, type: 3}
 --- !u!1 &1192111104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac79df12487e417d9b2baf59f3b59243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: 33a94069926a1ff4b9de9e623ac46fb7, type: 2}
+  _asset: {fileID: 11400000, guid: 33a94069926a1ff4b9de9e623ac46fb7, type: 2}
 --- !u!4 &1321953008
 Transform:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 1665201022}
   - component: {fileID: 1665201021}
   m_Layer: 5
-  m_Name: Live (0)
+  m_Name: Life (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 1683259782}
   - component: {fileID: 1683259781}
   m_Layer: 5
-  m_Name: Live (1)
+  m_Name: Life (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

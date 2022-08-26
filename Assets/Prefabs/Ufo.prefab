@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 398196937473297186}
+  _renderer: {fileID: 398196937473297186}
 --- !u!114 &6933657523992659047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenWrapper: {fileID: 398196937473297184}
   rb2D: {fileID: 398196937473297188}
-  bulletPrefabRb2D: {fileID: 232806321241050222, guid: 2a94f0a1150cd024092f882faeae23cb, type: 3}
+  _bulletPrefabRb2D: {fileID: 232806321241050222, guid: 2a94f0a1150cd024092f882faeae23cb, type: 3}
 --- !u!114 &7384676407443770235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,9 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore:
-  - 
+  IgnoreSelf: 1
+  TagsToIgnore: []
 --- !u!61 &8747073911277369484
 BoxCollider2D:
   m_ObjectHideFlags: 0

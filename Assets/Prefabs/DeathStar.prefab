@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79aa764e279c3f742b91e363727f807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 398196937473297186}
+  _renderer: {fileID: 398196937473297186}
 --- !u!114 &8099585124457237427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenWrapper: {fileID: 398196937473297184}
   rb2D: {fileID: 398196937473297188}
-  childDeathStars:
+  _childDeathStars:
   - {fileID: 5137381643734426745}
   - {fileID: 5498071527805978033}
   - {fileID: 5383668211890743436}
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22429edc4832465982112241c86bfc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreSelf: 1
-  tagsToIgnore:
+  IgnoreSelf: 1
+  TagsToIgnore:
   - Asteroid
 --- !u!58 &8181526347289183933
 CircleCollider2D:
@@ -231,6 +231,14 @@ PrefabInstance:
     - target: {fileID: 7258056133629243267, guid: 48e09bdf8a82cf542bdd63c6eec0243f, type: 3}
       propertyPath: m_Simulated
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419729463313664105, guid: 48e09bdf8a82cf542bdd63c6eec0243f, type: 3}
+      propertyPath: TagsToIgnore.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419729463313664105, guid: 48e09bdf8a82cf542bdd63c6eec0243f, type: 3}
+      propertyPath: TagsToIgnore.Array.data[0]
+      value: Asteroid
       objectReference: {fileID: 0}
     - target: {fileID: 9148788572789847663, guid: 48e09bdf8a82cf542bdd63c6eec0243f, type: 3}
       propertyPath: m_Name

@@ -90,6 +90,10 @@ PrefabInstance:
       propertyPath: waitBeforeEnableSec
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3534412052996534302, guid: cbc5ea9758b587c47967f2fd9c7dda9e, type: 3}
+      propertyPath: _waitBeforeEnableSec
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4629926052133298801, guid: cbc5ea9758b587c47967f2fd9c7dda9e, type: 3}
       propertyPath: m_Mass
       value: 1.6286018

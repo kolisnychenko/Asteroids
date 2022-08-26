@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Asteroids
 {
     public class TagwiseCollisionDetector : MonoBehaviour
     {
-        public bool ignoreSelf = true;
-        public string[] tagsToIgnore;
+        public bool IgnoreSelf = true;
+        public string[] TagsToIgnore;
         
         private ITagwiseCollisionReceiver[] _receivers;
         
@@ -21,10 +22,10 @@ namespace Asteroids
         {
             string colTag = col.gameObject.tag;
             
-            if (ignoreSelf && tag.Equals(colTag))
+            if (IgnoreSelf && tag.Equals(colTag))
                 return;
             
-            if (tagsToIgnore.Any(tagToIgnore => tagToIgnore.Equals(colTag)))
+            if (TagsToIgnore.Any(tagToIgnore => tagToIgnore.Equals(colTag)))
                 return;
     
             foreach (var receiver in _receivers)
